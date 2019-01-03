@@ -156,6 +156,10 @@ namespace {
             score -= Doubled;
     }
 
+	// check if passed pawns are on both flanks
+     if (popcount(e->passedPawns[Us]) >= 2)
+         e->splitPassedPawns[Us] = fmax-fmin;
+ 
     return score;
   }
 
